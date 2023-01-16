@@ -1,0 +1,11 @@
+Movies Table
+-id, title, year, duration, decription, average_vote, production_company_id
+
+Production_Companies
+-id, named
+
+movie_genres
+-movie_id, genre_id
+
+genres Table
+-id, name
