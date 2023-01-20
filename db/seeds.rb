@@ -25,7 +25,7 @@ movies.each do |m|
       title:        m["original_title"],
       year:         m["year"],
       duration:     m["duration"],
-      decription:   m["discription"],
+      description:  m["description"],
       average_vote: m["avg_vote"]
     )
     puts "Invalid movie #{m['original_title']}" unless movie&.valid?

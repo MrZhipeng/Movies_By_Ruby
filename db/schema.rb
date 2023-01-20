@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_16_223726) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_20_231957) do
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.integer "year"
     t.integer "duration"
-    t.text "decription"
+    t.text "description"
     t.decimal "average_vote"
     t.integer "production_company_id", null: false
     t.datetime "created_at", null: false
