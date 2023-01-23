@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   #   GET /production_companies/:id
 
   root to: "home#index"
-  resources :movies, only: %i[index show]
+  resources :movies, only: %i[index show] do
+    collection do
+      get "search" # movies/search/:id
+    end
+  end
   resources :production_companies, only: %i[index show]
 end

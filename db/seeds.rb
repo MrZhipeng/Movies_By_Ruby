@@ -7,6 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "csv"
 
+MovieGenre.delete_all
+Genre.delete_all
+
 Movie.delete_all
 ProductionCompany.delete_all
 Page.delete_all
@@ -30,6 +33,14 @@ movies.each do |m|
       average_vote: m["avg_vote"]
     )
     puts "Invalid movie #{m['original_title']}" unless movie&.valid?
+
+    genres = m["genre"].split(",").map(&:strip)
+
+    genres.each do |genre_name|
+      genre = Genre.find_or_create_by(name: genre_name)
+
+      MovieGenre.create(movie:, genre:)
+    end
   else
     puts "invalid production company #{m['production_company']} for movie #{m['original_title']}."
   end
